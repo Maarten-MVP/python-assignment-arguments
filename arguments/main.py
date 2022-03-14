@@ -6,32 +6,33 @@ __human_name__ = 'arguments'
 
 def greet(name, template=f'Hello, <name>!'):
     if template == 'Hello, <name>!':
-        print(f'Hello, {name}')
+        return(f'Hello, {name}!')
     else:
         greet = template.replace('<name>', name)
-        print(greet)
+        return(greet)
         
 
 def force(mass, body='earth'):
     gravities = {
         'sun': 274,
-        'jupiter': 24.92,
-        'neptune': 11.15,
-        'saturn': 10.44,
-        'earth': 9.798,
-        'uranus': 8.87,
-        'venus': 8.87,
-        'mars': 3.71,
-        'mercury': 3.7,
-        'moon': 1.62,
-        'pluto': 0.58
+        'jupiter': round(24.92, 1),
+        'neptune': round(11.15,1),
+        'saturn': round(10.44,1),
+        'earth': round(9.798,1),
+        'uranus': round(8.87,1),
+        'venus': round(8.87,1),
+        'mars': round(3.71,1),
+        'mercury': round(3.7,1),
+        'moon': round(1.62,1),
+        'pluto': round(0.58,1)
     }
     force = mass * gravities[body]
-    print(force)
+    return(force)
+
 
 def pull(m1, m2, d):
-    pull = (6674 * 10 ** -11) * ((m1 * m2)/d ** 2)
-    print(pull)
+    pull = (6.674 * 10 ** -11) * ((m1 * m2)/d ** 2)
+    return(pull)
 
 pull(800, 1500, 3)
 
